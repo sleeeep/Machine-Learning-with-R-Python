@@ -8,7 +8,8 @@ inTraining <- createDataPartition(Sonar$Class, p = .75, list = FALSE)
 training <- Sonar[ inTraining,]
 testing  <- Sonar[-inTraining,]
 
-fitControl <- trainControl(## 10-fold CVmethod = "repeatedcv",
+fitControl <- trainControl(## 10-fold CV
+                        method = "repeatedcv",
                         number = 10,
                         ## repeated ten times
                         repeats = 10)
